@@ -50,8 +50,16 @@ static int dispatch_external_command(struct command *pipeline)
 	 *
 	 * Good luck!
 	 */
-	fprintf(stdout, "Hello World");
+
+	// shell find the command in PATH
+	// use exec* lib (execvp(3)) to find command in path before executing
+	// use fork(2) and execve(2) to execute command 
+	// 
+	// int n = sizeof(pipeline->argv[0])/sizeof(pipeline->argv[0]);
+	fprintf(stdout,"%s\n",pipeline->argv[0]);
+	fprintf(stderr, "wtf\n");
 	
+
 
 	return -1;
 }
